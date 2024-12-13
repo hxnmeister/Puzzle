@@ -14,8 +14,10 @@ namespace Puzzle
         static void Main(string[] args)
         {
             List<string> fileData = File.ReadAllLines(PATH_TO_FILE).ToList();
+            string result = ConcatMatchesIntoString(FindMatches(fileData).Distinct().ToList());
 
-            Console.WriteLine(ConcatMatchesIntoString(FindMatches(fileData).Distinct().ToList()));
+            Console.WriteLine($"Result length: {result.Length} characters");
+            Console.WriteLine($"Result: {result}");
         }
 
         static List<string> FindMatches(List<string> fileData)
